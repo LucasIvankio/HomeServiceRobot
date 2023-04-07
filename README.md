@@ -1,6 +1,6 @@
 # HomeServiceRobot
 
-The Home Service Robot project in the Robotics Software Engineer Nanodegree uses a number of packages for localization, mapping, and navigation.
+The Home Service Robot project in the Robotics Software Engineer Nanodegree uses a number of packages for localization, mapping, and navigation. As well as some custom packages designed specifically for the project, such as add_markers and pickup_objects.
 
 ### Localization
 
