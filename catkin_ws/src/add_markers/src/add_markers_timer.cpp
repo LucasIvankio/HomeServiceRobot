@@ -4,7 +4,7 @@
 
 int main( int argc, char** argv )
 {
-  ros::init(argc, argv, "add_markers");
+  ros::init(argc, argv, "add_markers_timer");
   ros::NodeHandle n;
   ros::Rate r(1);
   ros::Publisher marker_pub = n.advertise<visualization_msgs::Marker>("visualization_marker", 1);
@@ -32,7 +32,7 @@ int main( int argc, char** argv )
 
     // Set the pose of the marker.  This is a full 6DOF pose relative to the frame/time specified in the header
     marker.pose.position.x = 3.0;
-    marker.pose.position.y = -3.0;
+    marker.pose.position.y = -2.8;
     marker.pose.position.z = 0.5;
     marker.pose.orientation.x = 0.0;
     marker.pose.orientation.y = 0.0;
@@ -65,18 +65,19 @@ int main( int argc, char** argv )
     ROS_WARN_ONCE("Subscriber created");
     sleep(1);
     marker_pub.publish(marker);
-	sleep(5);
-	
+//	sleep(5);
+	ros::Duration(5.0).sleep();
     marker.action = visualization_msgs::Marker::DELETE;
     marker_pub.publish(marker);
-    sleep(5);
-    
+//    sleep(5);
+    ros::Duration(5.0).sleep();
     marker.action = visualization_msgs::Marker::ADD;
-    marker.pose.position.x = 1.0;
-    marker.pose.position.y = -3.4;
+    marker.pose.position.x = 0.8;
+    marker.pose.position.y = -0.8;
     marker.pose.position.z = 0.5;
     marker_pub.publish(marker);
-    sleep(5);
+//    sleep(5);
+    ros::Duration(5.0).sleep();
   }
   return 0;
 }
